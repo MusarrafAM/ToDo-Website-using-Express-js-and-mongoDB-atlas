@@ -41,10 +41,15 @@ async function main() {
   // Home route
   app.get("/", async function (req, res) {
     const allItems = await Item.find({});
+
+    //!Get Current Day
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const currentDate = new Date();
+    const currentDayNumber = currentDate.getDay();
+    const currentDayName = daysOfWeek[currentDayNumber];
+
     if (allItems.length === 0) {
       //If our allItem list is empty then add the intial 3 items.
-
-      //!Get Current Day
 
       // !insert to mongodb
 
@@ -57,7 +62,7 @@ async function main() {
         });
       res.redirect("/");
     } else {
-      res.render("list", { listTitle: "Today", listItems: allItems });
+      res.render("list", { listTitle: currentDayName, listItems: allItems });
     }
   });
 
