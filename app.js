@@ -43,7 +43,15 @@ async function main() {
     const allItems = await Item.find({});
 
     //!Get Current Day
-    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const daysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
     const currentDate = new Date();
     const currentDayNumber = currentDate.getDay();
     const currentDayName = daysOfWeek[currentDayNumber];
@@ -105,11 +113,15 @@ async function main() {
       await customListName.save();
       res.redirect("/");
     } else {
-      List.findOne({ name: listName }).then(async (foundList) => {
-        foundList.items.push(customListName);
-        foundList.save();
-        res.redirect("/" + listName); //This will take us to the New todolist route with parametes
-      });
+      if (itemName != "") {
+        List.findOne({ name: listName }).then(async (foundList) => {
+          foundList.items.push(customListName);
+          foundList.save();
+          res.redirect("/" + listName); //This will take us to the New todolist route with parametes
+        });
+      } else {
+        res.redirect("/" + listName);
+      }
     }
   });
 
