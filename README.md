@@ -4,6 +4,5 @@
 
 # Screenshots
 
-![1](https://github.com/MusarrafAM/ToDo-Website-using-Express-js-and-mongoDB-atlas/assets/102628794/2b9a448b-aae5-4f14-bc36-52d128b46f1f)
-![2](https://github.com/MusarrafAM/ToDo-Website-using-Express-js-and-mongoDB-atlas/assets/102628794/94c8269e-9db8-4496-bfc8-9d07efa522b1)
-
+![1](https://github.com/MusarrafAM/ToDo-Website-using-Express-js-and-mongoDB-atlas/assets/102628794/86cf191c-af57-49a2-a014-413c7e16d447)
+![2](https://github.com/MusarrafAM/ToDo-Website-using-Express-js-and-mongoDB-atlas/assets/102628794/c89bd8b8-127d-453b-ae54-69bf2b4ac961)
